@@ -1,0 +1,17 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "Epic cute owo bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "sach1",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "djs-commands": "^1.2.2",
+    "moment": "^2.25.3",
+    "ms": "latest"
+  }
+}
