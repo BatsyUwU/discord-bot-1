@@ -1,17 +1,13 @@
-const Discord = require("discord.js");
-// eslint-disable-next-line no-unused-vars
-const client = new Discord.Client();
-const config = require("../config.json");
+const Discord = require('discord.js');
+const config = require('../../config.json');
 
 module.exports = {
   name: "serverinfo",
   description: "Displays Server Infos.",
   aliases: ["si", "serverinfo", "sinfo"],
   category: "utility",
-  usage: "b!serverinfo",
-  cooldown: 5,
   // eslint-disable-next-line no-unused-vars
-  execute(message, args) {
+  run: async (client, message, args) => {
     const serverembed = new Discord.MessageEmbed()
       .setTitle("Server Info")
       .setColor("a029e6")

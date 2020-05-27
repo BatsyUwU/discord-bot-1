@@ -1,17 +1,13 @@
-const Discord = require("discord.js");
-// eslint-disable-next-line no-unused-vars
-const client = new Discord.Client();
-const config = require("../config.json");
+const Discord = require('discord.js');
+const config = require('../../config.json');
 
 module.exports = {
   name: "avatar",
   description: "Displays user avatar",
   aliases: ["avatar", "icon", "pfp"],
   category: "utility",
-  usage: "b!avatar @user",
-  cooldown: 5,
   // eslint-disable-next-line no-unused-vars
-  execute(message, args) {
+  run: async (client, message, args) => {
     const member = message.mentions.users.first() || message.author;
     const avEmbedPing = new Discord.MessageEmbed()
       .setTitle("Hewe's " + member.username + "'s awatar uwu")

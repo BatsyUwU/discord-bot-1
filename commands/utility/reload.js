@@ -1,9 +1,12 @@
+const Discord = require('discord.js');
+const config = require('../../config.json');
+
 module.exports = {
   name: "reload",
   description: "Reloads a command",
   category: "utility",
   args: true,
-  execute(message, args) {
+  run: async (client, message, args) => {
     const commandName = args[0].toLowerCase();
     const command =
       message.client.commands.get(commandName) ||

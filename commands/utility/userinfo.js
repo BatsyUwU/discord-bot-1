@@ -1,18 +1,13 @@
-/* eslint-disable no-mixed-spaces-and-tabs */
-const Discord = require("discord.js");
-// eslint-disable-next-line no-unused-vars
-const client = new Discord.Client();
-const config = require("../config.json");
+const Discord = require('discord.js');
+const config = require('../../config.json');
 
 module.exports = {
   name: "userinfo",
   description: "Displays User Infos.",
   aliases: ["ui", "us", "uinfo", "useri", "alias"],
   category: "utility",
-  usage: "b!userinfo @user",
-  cooldown: 5,
   // eslint-disable-next-line no-unused-vars
-  execute(message, args) {
+  run: async (client, message, args) => {
     const user = message.mentions.users.first() || message.author;
     const member = message.mentions.members.first() || message.author;
 
