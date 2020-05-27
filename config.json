@@ -1,13 +1,7 @@
 {
-<<<<<<< HEAD
-    "token": "Njg4NTU0OTA5MDcwNjU1NDkz.Xs4dng.DYKFezCpYa70XbqAlgLdlhfj3TA",
-    "prefix": "b!",
-    "maker": "sach1#4117",
-=======
     "token": "your-token-here",
     "prefix": "your-prefix",
     "maker": "your-discord-tag",
->>>>>>> bd5ce5cd58c8d6d8c981cc4faa590406509dc4da
     "e621": {
         "username": "wip",
         "password": "wip"
