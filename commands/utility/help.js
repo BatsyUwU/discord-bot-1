@@ -1,7 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 const { stripIndents } = require('common-tags');
 // eslint-disable-next-line no-unused-vars
-const utils = require('../../utils.js');
 
 module.exports = {
 	name: 'help',

@@ -1,6 +1,1 @@
-node_modules
-package-lock.json
-.eslintrc.json
-copy_paste.js
-Procfile
-config.json
+mongodb.js

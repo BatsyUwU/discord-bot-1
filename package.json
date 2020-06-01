@@ -15,6 +15,7 @@
     "discord.js": "^12.2.0",
     "e621-api": "^0.3.9",
     "moment": "^2.25.3",
+    "mongoose": "^5.9.16",
     "ms": "latest",
     "snekfetch": "^4.0.4"
   }

@@ -36,6 +36,7 @@ module.exports = {
 				'Either the user isn\'t in the server, or u didn\'t provide the user id.',
 			);
 		}
+
 		const reason = message.content.split(`b!ban ${user.id} `);
 		if (!args[1]) {
 			return message.channel.send('U forgot the reason :/');

@@ -1,5 +1,4 @@
 const { Client, Collection } = require('discord.js');
-
 const config = require('./config.json');
 const fs = require('fs');
 const client = new Client({
@@ -53,4 +52,4 @@ client.on('message', async (message) => {
 	}
 });
 
-client.login(config.token);
+return client.login(config.token);

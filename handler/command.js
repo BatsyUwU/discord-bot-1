@@ -1,5 +1,4 @@
 const { readdirSync } = require('fs');
-
 const ascii = require('ascii-table');
 
 const table = new ascii('Commands');
