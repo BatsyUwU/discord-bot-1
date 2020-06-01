@@ -1,35 +1,34 @@
-/* eslint-disable no-unused-vars */
 const Discord = require('discord.js');
-const config = require('../../config.json');
 
 module.exports = {
-	name: 'kick',
-	description: 'Kicks a member.',
-	aliases: ['kick', 'k', 'expel'],
-	usage: 'b!kick',
+	name: 'ban',
+	description: 'Ban a member',
 	category: 'moderation',
-	// eslint-disable-next-line no-unused-vars
-	run: async (client, message) => {
+	alias: [],
+	usage: 'b!ban (userID) (reason)',
+	run: (client, message) => {
 		const args = message.content.split(' ').slice(1);
-		const reason = args.slice(1).join(' ');
-
-		const user = message.mentions.users.first();
 
 		if (!args[0]) {
-			return message.reply('you must mention someone to kick them.');
+			return message.channel.send(
+				'U forgot to mention the user to ban :/',
+			);
 		}
 
-		if (user.id === message.author.id) {
-			return message.reply('U can\'t kick yourself lmao');
+		const user = message.guild.members.cache.get(args[0]);
+
+		if (user == message.author.id) {
+			return message.channel.send('U can\'t just ban yourself, right?...');
 		}
+
 		// cambia l'id qui giù con quello del tuo bot
-		if (user.id == '688554909070655493') {
-			return message.channel.send('Why do u want to kick me? :(');
+		if (user == '688554909070655493') {
+			return message.channel.send('Why do u want to ban me? :(');
 		}
 
 		// cambia l'id qui giù con il tuo id
-		if (user.id == '335394597763153920') {
-			return message.channel.send('How dare u try to kick my daddy? >:(');
+		if (user == '335394597763153920') {
+			return message.channel.send('How dare u try to ban my daddy? >:(');
 		}
 
 		if (!user) {
@@ -37,21 +36,19 @@ module.exports = {
 				'Either the user isn\'t in the server, or u didn\'t provide the user id.',
 			);
 		}
-
-		if (!message.guild.member(user).kickable) {
-			return message.reply('I cannot kick that member');
-		}
-
+		const reason = message.content.split(`b!ban ${user.id} `);
 		if (!args[1]) {
 			return message.channel.send('U forgot the reason :/');
 		}
-
-		if (!message.member.permissions.has('KICK_MEMBERS')) {
+		if (!reason) {
+			return message.channel.send('U forgot the reason :/');
+		}
+		if (!message.member.permissions.has('BAN_MEMBERS')) {
 			return message.channel.send(
 				'You do not have the perms to do so :/',
 			);
 		}
-		message.guild.member(user).kick(reason);
+		user.ban();
 
 		const modlogChannelID = '716429741305102346';
 		if (modlogChannelID.length !== 0) {
@@ -60,7 +57,7 @@ module.exports = {
 			const embed = new Discord.MessageEmbed()
 				.setColor('#a029e6')
 				.setTimestamp()
-				.addField('Action:', '```' + 'Kick' + '```')
+				.addField('Action:', '```' + 'Ban' + '```')
 				.addField(
 					'User:',
 					'```' +
@@ -88,7 +85,7 @@ module.exports = {
 			const embed = new Discord.MessageEmbed()
 				.setColor('#a029e6')
 				.setTimestamp()
-				.addField('Action:', '```' + 'Kick' + '```')
+				.addField('Action:', '```' + 'Ban' + '```')
 				.addField(
 					'User:',
 					'```' +

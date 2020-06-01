@@ -16,7 +16,7 @@ module.exports = {
 				if (member == message.mentions.users.first()) {
 					const embed = new Discord.MessageEmbed()
 						.setTitle(
-							`${member.username} is a baka1`,
+							`${member.username} is a baka!`,
 						)
 						.setImage(response.body.url)
 						.setColor('#a029e6')

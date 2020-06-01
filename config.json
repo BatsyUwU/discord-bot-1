@@ -1,5 +1,13 @@
 {
-    "token": "your-token",
-    "prefix": "your-prefix",
-    "maker": "your-username"
+    "token": "Njg4NTU0OTA5MDcwNjU1NDkz.Xs4nNQ.21CYQ11jrQHPxK1rsAyJgdErmIQ",
+    "prefix": "b!",
+    "maker": "sach1#4117",
+    "e621": {
+        "username": "wip",
+        "password": "wip"
+    },
+    "pixiv": {
+        "username": "wip",
+        "password": "wip"
+    }
 }

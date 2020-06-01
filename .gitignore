@@ -3,5 +3,4 @@ package-lock.json
 .eslintrc.json
 copy_paste.js
 Procfile
-ban.js
-warn.js
+config.json
